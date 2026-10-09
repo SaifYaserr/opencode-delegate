@@ -7,3 +7,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-09: tests-first only for pure logic; for mocked I/O the ticket lists the cases and the cross-review checks each exists.
 - 2026-10-09 lesson: 2026-10-09 step-5 cross-review, push switch: missed that a startsWith('/') && !startsWith('//') link check is bypassed by '/\evil.com' (brow
 - 2026-10-09 lesson: 2026-10-09 mimo, privacy text: the Arabic retention line said the opposite of the English ('longer than the life of the device' vs 'as long 
+- 2026-10-09: fix: OCD_* settings given on the command line now win over defaults and project.env.

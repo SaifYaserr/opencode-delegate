@@ -1,6 +1,9 @@
 # Shared by every ocd command. Loads the project's .opencode/project.env.
 # shellcheck disable=SC2034
 ocd_load() {
+  # Settings given on the command line (OCD_BUILDER=… ocd run …) win over the
+  # defaults and over project.env: remember them, apply them last.
+  local overrides; overrides="$(env | grep '^OCD_[A-Z_]*=' | grep -v '^OCD_HOME=' || true)"
   ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
   OCD_PROJECT_SKILL="project-rules"
   OCD_PATH_PREFIX=""
@@ -16,6 +19,7 @@ ocd_load() {
   OCD_SPEC_DIR=""
   # shellcheck source=/dev/null
   [ -f "$ROOT/.opencode/project.env" ] && . "$ROOT/.opencode/project.env"
+  while IFS= read -r kv; do [ -n "$kv" ] && export "${kv%%=*}=${kv#*=}"; done <<< "$overrides"
   [ -n "$OCD_PATH_PREFIX" ] && export PATH="$OCD_PATH_PREFIX:$PATH"
   mkdir -p "$OCD_LOGDIR"
   OPENCODE="${OPENCODE:-$(command -v opencode || echo "$HOME/.opencode/bin/opencode")}"
