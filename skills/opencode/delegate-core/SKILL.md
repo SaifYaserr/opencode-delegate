@@ -52,3 +52,4 @@ Print `git show --stat HEAD`, the one-line test summary, and any assumption you 
 - 2026-10-09: reviewer's own pipe `test | tail` hid a failing test and a broken commit went through. **Rule:** `set -o pipefail`.
 - 2026-10-09: step-5, plan: planned hand-written VAPID/aes128gcm and a wrong migration date. **Rules:** library over hand-rolled crypto; migrations dated today.
 - 2026-10-09: nemotron, usage ticket: good: checked the real table columns before writing SQL instead of trusting the prompt. Keep doing this.
+- 2026-10-09: 2026-10-09 step-5 cross-review, push switch: missed that a startsWith('/') && !startsWith('//') link check is bypassed by '/\evil.com' (browsers read backslash as slash); Claude caught it. **Rule:** to keep a URL on-site, resolve it with new URL(raw, origin) and compare origins; never check prefixes.
