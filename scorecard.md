@@ -16,3 +16,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-09 | mohamy | table + RLS + API | build | Claude Sonnet agent | 4 | 0 | 0 | 83k tokens |
 | 2026-10-09 | mohamy | sending logic | build+xr | mimo build, step-5 review | ~50 | 1 | 8 by xr (4 med), 2 by Claude | xr beat a quick Claude review |
 | 2026-10-09 | mohamy | client card + service worker | build+xr | mimo build, step-5 review | ~60+30 | 1 | 8 by xr (3 med), 2 by Claude (URL bypass, Arabic legal meaning) | xr and Claude caught disjoint sets |
+| 2026-10-10 | mohamy-reel | Remotion video + kit | build | mimo-v2.6-flash-free | ~90 | 0 (Claude fixed 3 small items) | 3 | strong at motion code; review stills as contact sheets |
