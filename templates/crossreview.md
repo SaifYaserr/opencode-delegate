@@ -7,7 +7,7 @@ Check, in this order:
 2. Bugs: wrong logic, unhandled errors, `fetch` without a `response.ok` check, a promise not awaited, a race, an off-by-one, a wrong status code.
 3. Security and privacy: access rules, secrets in client code (`NEXT_PUBLIC_` on a secret), personal data leaking (logs, push text, URLs), missing auth or permission checks.
 4. The house rules in the {{project_skill}} skill (style, i18n, logging, module boundaries) and the delegate-core rules.
-5. Tests: do they test behaviour (not implementation)? Was any test weakened or a reviewer-owned test changed?
+5. Tests: do they test behaviour (not implementation)? Was any test weakened or a reviewer-owned test changed? If the ticket lists test cases, check each one exists and asserts what it says; name any missing case.
 
 Reply with ONLY a findings list, most severe first, each one line:
 `[high|medium|low] path:line — what is wrong — the fix`
