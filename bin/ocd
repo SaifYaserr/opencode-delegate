@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# ocd: Claude plans and reviews, opencode (free models) builds.
+#   ocd init                         set up .opencode/ in the current project
+#   ocd run <plan|build> <model> <title> <prompt-file> [minutes] [session]
+#   ocd pipeline <base> <ticket> <plan|none> <session> [builder] [reviewer]
+#   ocd status                       one line per run + worktrees
+#   ocd review [base] [dir]          checks, diff, risky files, red flags, spec guard
+#   ocd prompt <template> key=value… fill a template (plan|crossreview|tickets|ticket)
+#   ocd lesson <generic|project> "<text>"   record a lesson (generic = shared repo)
+#   ocd score "<table row>"          append a row to the shared scorecard
+#   ocd update                       pull the latest shared workflow
+set -uo pipefail
+OCD_HOME="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+export OCD_HOME
+cmd="${1:-help}"; shift || true
+case "$cmd" in
+  init|run|pipeline|status|review|prompt|lesson|score) exec "$OCD_HOME/lib/$cmd.sh" "$@" ;;
+  update) git -C "$OCD_HOME" pull --ff-only ;;
+  *) sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//' ;;
+esac

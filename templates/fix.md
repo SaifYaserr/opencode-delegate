@@ -1,0 +1,1 @@
+Load skills delegate-core and {{project_skill}}. A second model reviewed your work. Fix every [high] and [medium] finding below that is correct; for one you believe is wrong, say why in one line. Re-run the project checks (with `set -o pipefail`), then amend your commit (git add explicit paths; git commit --amend --no-edit). Do not touch reviewer-owned tests.
