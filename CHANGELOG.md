@@ -9,3 +9,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-09 lesson: 2026-10-09 mimo, privacy text: the Arabic retention line said the opposite of the English ('longer than the life of the device' vs 'as long 
 - 2026-10-09: fix: OCD_* settings given on the command line now win over defaults and project.env.
 - 2026-10-09: init: detects a Node install outside PATH (~/.local/node, nvm, volta) and records it in project.env; init --draft verified end to end.
+- 2026-10-09: fix: pipeline parses findings wrapped in backticks/bullets/bold; an unparsed review now says so instead of looking clean.

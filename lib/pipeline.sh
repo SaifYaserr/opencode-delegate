@@ -11,7 +11,10 @@ name="$(basename "$ticket" .md)-$(date +%H%M)"
 
 ocd_fill crossreview ticket="$ticket" plan="$plan" base="$base" > "$OCD_LOGDIR/xr-$name.txt"
 "$OCD_HOME/lib/run.sh" plan "$reviewer" "cross-review $name" "$OCD_LOGDIR/xr-$name.txt" 30 > "$OCD_LOGDIR/xr-$name.log" 2>&1
-findings=$(sed 's/\x1b\[[0-9;]*m//g' "$OCD_LOGDIR/xr-$name.log" | grep -E '^\[(high|medium|low)\]|^VERDICT')
+# Models decorate lines (backticks, bullets, bold): strip that before matching.
+findings=$(sed -e 's/\x1b\[[0-9;]*m//g' -e 's/^[[:space:]`*>-]*//' -e 's/[`*]*[[:space:]]*$//' "$OCD_LOGDIR/xr-$name.log" \
+  | grep -E '^\[(high|medium|low)\]|^VERDICT')
+[ -z "$findings" ] && findings="VERDICT: unparsed (read $OCD_LOGDIR/xr-$name.log)"
 echo "$findings" > "$OCD_LOGDIR/findings-$name.txt"
 echo "--- cross-review ($reviewer)"; echo "$findings"
 
