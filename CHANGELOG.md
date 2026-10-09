@@ -10,3 +10,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-09: fix: OCD_* settings given on the command line now win over defaults and project.env.
 - 2026-10-09: init: detects a Node install outside PATH (~/.local/node, nvm, volta) and records it in project.env; init --draft verified end to end.
 - 2026-10-09: fix: pipeline parses findings wrapped in backticks/bullets/bold; an unparsed review now says so instead of looking clean.
+- 2026-10-09: fix: run doesn't retry on the fallback model when the reviewer interrupts a run (exit 130/143). Tip: stop runs by PID, not `pkill -f` with a pattern your own shell contains.

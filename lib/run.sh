@@ -12,7 +12,8 @@ args=(run --agent "$agent" -m "opencode/$model" --title "$title")
 [ -n "$session" ] && args+=(-s "$session")
 timeout --signal=INT "${minutes}m" "$OPENCODE" "${args[@]}" "$(cat "$prompt")"
 code=$?
-if [ $code -ne 0 ] && [ $code -ne 124 ] && [ -n "$OCD_FALLBACK" ] && [ "$OCD_FALLBACK" != "$model" ]; then
+# Not on a timeout (124) or an interrupt by the reviewer (130 SIGINT, 143 SIGTERM).
+if [ $code -ne 0 ] && [ $code -ne 124 ] && [ $code -ne 130 ] && [ $code -ne 143 ] && [ -n "$OCD_FALLBACK" ] && [ "$OCD_FALLBACK" != "$model" ]; then
   echo "FAILED on $model (exit $code), retrying on $OCD_FALLBACK"
   args[4]="opencode/$OCD_FALLBACK"
   timeout --signal=INT "${minutes}m" "$OPENCODE" "${args[@]}" "$(cat "$prompt")"
