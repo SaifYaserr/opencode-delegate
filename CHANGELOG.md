@@ -13,3 +13,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-09: fix: run doesn't retry on the fallback model when the reviewer interrupts a run (exit 130/143). Tip: stop runs by PID, not `pkill -f` with a pattern your own shell contains.
 - 2026-10-10: Claude skill: reinstall dependencies after integrating commits that touch manifests/lockfiles; read every check's result (a filtered check failed silently in the mohamy batch).
 - 2026-10-10 lesson: 2026-10-09 mimo, Remotion reel: Arabic text was right-to-left but every row/grid container was left-to-right (labels, avatars, toggles and a
+- 2026-10-10: Claude skill: wait loops must not self-match (a pgrep -f loop ran stuck for 4 h); wait on PIDs.

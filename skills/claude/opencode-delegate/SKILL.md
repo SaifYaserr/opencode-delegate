@@ -33,6 +33,7 @@ The CLI is `ocd` (repo: this skill's repo, `ocd update` pulls it). The builder-s
 Parallel runs, worktrees and deferred cleanups create loose ends that otherwise live only in the conversation. Keep one checklist file per batch (the project's memory or handoff file): Done / Open per ticket / batch wrap-up / workflow / owner decisions. Update it **every time** something starts, lands or is deferred, not at the end. Before telling the owner a batch is ready, every Open item is either done or explicitly handed over.
 
 ## Polling
+- A wait loop must not match itself: `pgrep -f "<pattern>"` and `pkill -f` see your own shell's command line, which contains the pattern, so the loop never ends (or kills itself). Wait on a PID (`while kill -0 $PID`), or use `ps -eo args | grep -v grep | grep -q`, or a bracket trick (`pgrep -f "[o]pencode.*title"`). Stop runs by PID.
 `ocd status` (one line per run). Never sit in a loop reading logs; wait for background notifications. Don't spawn agents just to wait on CI.
 
 ## Improving the workflow itself
