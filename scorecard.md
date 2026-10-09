@@ -15,3 +15,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-09 | mohamy | feature plan | plan | step-5-preview-free | ~25 | – | 3 | wrong migration date, hand-rolled crypto; found every hook point |
 | 2026-10-09 | mohamy | table + RLS + API | build | Claude Sonnet agent | 4 | 0 | 0 | 83k tokens |
 | 2026-10-09 | mohamy | sending logic | build+xr | mimo build, step-5 review | ~50 | 1 | 8 by xr (4 med), 2 by Claude | xr beat a quick Claude review |
+| 2026-10-09 | mohamy | client card + service worker | build+xr | mimo build, step-5 review | ~60+30 | 1 | 8 by xr (3 med), 2 by Claude (URL bypass, Arabic legal meaning) | xr and Claude caught disjoint sets |
