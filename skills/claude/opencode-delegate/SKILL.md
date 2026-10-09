@@ -29,6 +29,9 @@ The CLI is `ocd` (repo: this skill's repo, `ocd update` pulls it). The builder-s
    - `graphify update . && graphify save-result --question "where is X" --answer "<files>" --outcome useful`.
    - Every ~10 tickets: `graphify reflect`, re-read the scorecard, adjust default models in `project.env`, prune lessons that no longer fire.
 
+## Keep an open-items checklist (always)
+Parallel runs, worktrees and deferred cleanups create loose ends that otherwise live only in the conversation. Keep one checklist file per batch (the project's memory or handoff file): Done / Open per ticket / batch wrap-up / workflow / owner decisions. Update it **every time** something starts, lands or is deferred, not at the end. Before telling the owner a batch is ready, every Open item is either done or explicitly handed over.
+
 ## Polling
 `ocd status` (one line per run). Never sit in a loop reading logs; wait for background notifications. Don't spawn agents just to wait on CI.
 
