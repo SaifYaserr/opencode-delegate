@@ -18,7 +18,13 @@ if [ ! -f .opencode/project.env ]; then
   [ -f pyproject.toml ] && checks="${checks:+$checks|}ruff check .|pytest -q"
   [ -f go.mod ] && checks="${checks:+$checks|}go vet ./...|go test ./..."
   [ -f Cargo.toml ] && checks="${checks:+$checks|}cargo clippy -q|cargo test -q"
-  sed "s#{{checks}}#${checks:-echo no checks configured}#" "$OCD_HOME/templates/project.env" > .opencode/project.env
+  # Tools installed outside PATH (a local Node, nvm): record where they are.
+  prefix=""
+  if ! command -v node >/dev/null && [ -f package.json ]; then
+    for d in "$HOME/.local/node/bin" "$HOME"/.nvm/versions/node/*/bin "$HOME/.volta/bin"; do [ -x "$d/node" ] && { prefix=$d; break; }; done
+  fi
+  sed -e "s#{{checks}}#${checks:-echo no checks configured}#" -e "s#^OCD_PATH_PREFIX=.*#OCD_PATH_PREFIX=${prefix}#" "$OCD_HOME/templates/project.env" > .opencode/project.env
+  [ -n "$prefix" ] && echo "node is not on PATH; using $prefix"
   echo "created .opencode/project.env (checks: ${checks:-none found})"
 fi
 [ -f .opencode/skills/project-rules/SKILL.md ] || cp "$OCD_HOME/templates/project-rules.SKILL.md" .opencode/skills/project-rules/SKILL.md
