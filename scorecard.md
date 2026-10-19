@@ -22,3 +22,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-20 | cafepos | same T018 review | review | glm-5.3-flash-free | 11 | – | 5 real of 10, 1 false | several vague 'unsure' lines |
 | 2026-10-20 | cafepos | same T018 review | review | nemotron-3.5-super-vl-free | 7 | – | 2-3 real of 5, 2 false | a false [high] (mutation errors do toast) |
 | 2026-10-20 | cafepos | same T018 review | review | longcat-2.5-preview-free | hung | – | 0 | no output after 28 min, stopped |
+| 2026-10-20 | cafepos | Go backup file safety + tests (T019-a1, 4 files) | build+xr | minimax build, deepseek review | 17+15 | 1 | 3 low by xr (dead guard, tie-break order, ignored remove errors), 0 by Claude | fixed all 3 in one round; correct data-loss fix |
