@@ -17,3 +17,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-10 lesson: mimo-v2.6-flash-free, Remotion video V1 (ticket 72): built a 12-component motion kit, 6 scenes, whisper alignment and self-reviewed frame st
 - 2026-10-20: `ocd status` reads `git worktree list --porcelain`, so a project path with spaces ("Cafe POS") no longer breaks the worktree lines.
 - 2026-10-20 lesson: 2026-10-20 bake-off, T018 review by 5 free models: no single model found everything; deepseek (broad, 0 false) and minimax (deep, caught a d
+- 2026-10-20 lesson: 2026-10-20 cafepos: `git worktree remove` fails with Permission denied when the worktree holds a Go module cache (Go makes it read-only). **
