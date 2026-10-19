@@ -12,6 +12,9 @@ for log in "$logdir"/run*.log "$logdir"/xr-*.log "$logdir"/fix-*.log; do
   printf '%-28s %-16s %s\n' "$(basename "$log" .log)" "$state" "$last"
 done
 echo "--- worktrees"
-git worktree list 2>/dev/null | while read -r dir _ branch; do
-  printf '%-50s %s  changed:%s\n' "$dir" "$branch" "$(git -C "$dir" status -s | grep -vc '\.opencode/')"
-done
+# --porcelain so a worktree path with spaces stays one field.
+git worktree list --porcelain 2>/dev/null |
+  awk '/^worktree /{d=substr($0,10)} /^branch /{print d "\t" substr($2,12)} /^detached/{print d "\t(detached)"}' |
+  while IFS=$'\t' read -r dir branch; do
+    printf '%-50s %s  changed:%s\n' "$dir" "$branch" "$(git -C "$dir" status -s | grep -vc '\.opencode/')"
+  done
