@@ -16,3 +16,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-10: Claude skill: wait loops must not self-match (a pgrep -f loop ran stuck for 4 h); wait on PIDs.
 - 2026-10-10 lesson: mimo-v2.6-flash-free, Remotion video V1 (ticket 72): built a 12-component motion kit, 6 scenes, whisper alignment and self-reviewed frame st
 - 2026-10-20: `ocd status` reads `git worktree list --porcelain`, so a project path with spaces ("Cafe POS") no longer breaks the worktree lines.
+- 2026-10-20 lesson: 2026-10-20 bake-off, T018 review by 5 free models: no single model found everything; deepseek (broad, 0 false) and minimax (deep, caught a d
