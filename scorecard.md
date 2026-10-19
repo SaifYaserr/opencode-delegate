@@ -21,3 +21,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-20 | cafepos | same T018 review | review | minimax-m3.1-flash-free | 30 | – | 5 real of 6, 0 false | only one to catch same-second backup deleting the earlier good file (data loss); missed post-swap path |
 | 2026-10-20 | cafepos | same T018 review | review | glm-5.3-flash-free | 11 | – | 5 real of 10, 1 false | several vague 'unsure' lines |
 | 2026-10-20 | cafepos | same T018 review | review | nemotron-3.5-super-vl-free | 7 | – | 2-3 real of 5, 2 false | a false [high] (mutation errors do toast) |
+| 2026-10-20 | cafepos | same T018 review | review | longcat-2.5-preview-free | hung | – | 0 | no output after 28 min, stopped |
