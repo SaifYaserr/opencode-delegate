@@ -19,3 +19,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-10 | mohamy-reel | Remotion video + kit | build | mimo-v2.6-flash-free | ~90 | 0 (Claude fixed 3 small items) | 3 | strong at motion code; review stills as contact sheets |
 | 2026-10-20 | cafepos | cross-review Go backup/restore + React (T018, 52 files) | review | deepseek-v4.1-flash-free | 14 | – | 7 real of 9, 0 false | broadest: post-swap error path, request-ctx cancel during restore, missing i18n key, tmp left on USB |
 | 2026-10-20 | cafepos | same T018 review | review | minimax-m3.1-flash-free | 30 | – | 5 real of 6, 0 false | only one to catch same-second backup deleting the earlier good file (data loss); missed post-swap path |
+| 2026-10-20 | cafepos | same T018 review | review | glm-5.3-flash-free | 11 | – | 5 real of 10, 1 false | several vague 'unsure' lines |
