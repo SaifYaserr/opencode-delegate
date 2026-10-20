@@ -19,3 +19,4 @@ Every change to the shared workflow, newest last. Lessons are appended by `ocd l
 - 2026-10-20 lesson: 2026-10-20 bake-off, T018 review by 5 free models: no single model found everything; deepseek (broad, 0 false) and minimax (deep, caught a d
 - 2026-10-20 lesson: 2026-10-20 cafepos: `git worktree remove` fails with Permission denied when the worktree holds a Go module cache (Go makes it read-only). **
 - 2026-10-20 lesson: 2026-10-20 cafepos: moving the batch branch (m2) while another ticket's pipeline used `m2` as its base made that ticket's diff include the o
+- 2026-10-20 lesson: 2026-10-20 cafepos: twice an `opencode run` printed nothing for 45-60 min and never created a session (opencode 2.0.26 service); a plain res
