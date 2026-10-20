@@ -24,3 +24,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-20 | cafepos | same T018 review | review | longcat-2.5-preview-free | hung | – | 0 | no output after 28 min, stopped |
 | 2026-10-20 | cafepos | Go backup file safety + tests (T019-a1, 4 files) | build+xr | minimax build, deepseek review | 17+15 | 1 | 3 low by xr (dead guard, tie-break order, ignored remove errors), 0 by Claude | fixed all 3 in one round; correct data-loss fix |
 | 2026-10-20 | cafepos | migration + sqlc + pricing snapshot + openapi (T019-b1, 11 files) | build+xr | deepseek build, minimax review | 17+15 | 1 | 6 low by xr (1 useful: enabled flags not stored, no impact since lines print only when amount > 0), 0 by Claude | clean, followed ticket exactly |
+| 2026-10-20 | cafepos | receipt prints stored rates (T019-b2, 4 files) | build+xr | deepseek build, minimax review | 15+12 | 1 | 6 by xr (1 useful: stale ADR-0017 line), 0 by Claude | correct fallback logic |
