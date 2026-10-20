@@ -33,3 +33,4 @@ Measured rows only (append with `ocd score`). Use it to pick `OCD_PLANNER`, `OCD
 | 2026-10-20 | cafepos | putBack rollback errors (T019-a3) | build+xr | deepseek build, minimax review | 6+15 | 1 | 7 by xr (2 medium real: a test that asserted the wrong thing, an ignored Remove error), 0 by Claude | same ticket minimax could not start in 65 min |
 | 2026-10-20 | cafepos | cross-review React refund dialog (T019-c3) | review | minimax-m3.1-flash-free | 30 (timeout) | – | 0 | spent the run in `sleep 280` loops; no findings. Second bad run in a row for minimax (see a3 build) |
 | 2026-10-20 | cafepos | cross-review React refund dialog (T019-c3) | review | glm-5.3-flash-free | 9 | 1 | 4 (1 medium real: a named test case missing), 0 false | good stand-in for minimax |
+| 2026-10-20 | cafepos | small backup/audit fix (T019-a4) | build+xr | deepseek build, glm review | <10+<10 | 0 | low notes only, verdict clean | |
